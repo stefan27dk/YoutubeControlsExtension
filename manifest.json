@@ -1,0 +1,47 @@
+{
+    "manifest_version": 2,
+    "name": "Youtube Controls Extension",
+    "version": "1.1",
+    "description": "This extension makes the left and right arrow keys to toggle back and forth the video and up and down keys to volume up and down ",
+ 
+     "icons":
+    {
+        "128": "you.png",
+        "48": "you.png",
+        "16": "you.png"
+    },
+
+    "browser_action": {
+      "default_icon": "you.png",
+      "default_popup": "popup.html"
+    },
+
+    "permissions": [
+        "activeTab",
+         "storage",
+         "https://*/*",
+         "http://*/*",
+         "tabs",
+         "management",
+         "webNavigation",
+         "webRequest",
+         "unlimitedStorage",
+         "ttsEngine",
+         "tts",
+         "topSites", 
+         "pageCapture"
+
+
+
+      ],
+
+
+
+      "content_scripts": [
+        {
+            "matches": ["*://*.youtube.com/*"],
+            "js": ["/content_script.js"]
+        }
+    ]
+      
+  }
